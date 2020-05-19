@@ -34,6 +34,7 @@ import org.apache.commons.lang.StringUtils;
 /**
  *
  * @author jlr
+ * @author Acaceres1996
  */
 public class TeamDevArgumentListBuilder extends ArgumentListBuilder {
 
@@ -71,8 +72,8 @@ public class TeamDevArgumentListBuilder extends ArgumentListBuilder {
         add("/s:" + serverURL);
 
         if (!userName.isEmpty()) {
-            add("/u:" + userName);
-            add("/p:" + userPassword);
+            addMasked("/u:" + userName);
+            addMasked("/p:" + userPassword);
         }
 
         add("/kb:" + kbName);
